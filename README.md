@@ -4,22 +4,27 @@ Automated setup script for Azure VMs. Installs Docker, runs nginx in a container
 
 ## Quick Start
 
-**Option 1: Download and run interactively** (prompts for network name)
+**Option 1: Download and run** (recommended - works with or without arguments)
+```bash
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
+sh setup-vm.sh tpet-dev
+```
+
+Or interactively:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
 sh setup-vm.sh
 ```
 
-**Option 2: Run directly with network name** (non-interactive)
+**Option 2: Pipe with bash and `-s` flag** (pass network name as argument)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sh my-network-name
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash -s tpet-dev
 ```
 
-**Option 3: On a local machine** (interactive prompt)
+**Option 3: Interactive mode** (prompts for network name)
 ```bash
-sh setup-vm.sh
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash
 ```
-When prompted, enter your desired Docker network name (e.g., `web-network`, `api-net`).
 
 ## What It Does
 
@@ -41,22 +46,27 @@ When prompted, enter your desired Docker network name (e.g., `web-network`, `api
 
 ## Usage Examples
 
+### With network name argument
+```bash
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
+sh setup-vm.sh prod-network
+```
+
 ### Interactive (prompts for network name)
-Download first, then run:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
 sh setup-vm.sh
 ```
 
-### Non-interactive (pass network name as argument)
-Pipe directly with network name:
+### One-liner with bash `-s` flag
+Pass network name as argument:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sh prod-network
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash -s prod-network
 ```
 
-Or run locally:
+Interactive mode:
 ```bash
-sh setup-vm.sh prod-network
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash
 ```
 
 ## Post-Setup
