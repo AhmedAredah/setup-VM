@@ -4,26 +4,14 @@ Automated setup script for Azure VMs. Installs Docker, runs nginx in a container
 
 ## Quick Start
 
-**Option 1: Download and run** (recommended - works with or without arguments)
+**With network name argument:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
-sh setup-vm.sh tpet-dev
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sudo bash -s tpet-dev
 ```
 
-Or interactively:
+**Interactive mode** (prompts for network name):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
-sh setup-vm.sh
-```
-
-**Option 2: Pipe with bash and `-s` flag** (pass network name as argument)
-```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash -s tpet-dev
-```
-
-**Option 3: Interactive mode** (prompts for network name)
-```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sudo bash
 ```
 
 ## What It Does
@@ -46,27 +34,14 @@ curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.
 
 ## Usage Examples
 
-### With network name argument
+### With a specific network name
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
-sh setup-vm.sh prod-network
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sudo bash -s prod-network
 ```
 
-### Interactive (prompts for network name)
+### Interactive mode (will prompt for network name)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh -o setup-vm.sh
-sh setup-vm.sh
-```
-
-### One-liner with bash `-s` flag
-Pass network name as argument:
-```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash -s prod-network
-```
-
-Interactive mode:
-```bash
-curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | bash
+curl -fsSL https://raw.githubusercontent.com/AhmedAredah/setup-VM/main/setup-vm.sh | sudo bash
 ```
 
 ## Post-Setup
